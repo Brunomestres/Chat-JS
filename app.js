@@ -21,6 +21,10 @@ io.on('connection', function(socket){
     socket.on('msgParaServidor', function(data){
         io.emit('msgParaCliente',{apelido: data.apelido, mensagem: data.mensagem});
         //io.broadcast.emit('msgParaCliente',{apelido: data.apelido, mensagem: data.mensagem});
+
+        io.emit('participantesParaCliente',{apelido: data.apelido});
+
+
     });
     
 });
